@@ -6,7 +6,6 @@ import {
     getTagById,
     updateTag,
 } from "../controllers/tag.controller.js";
-import { getRounds } from "bcrypt";
 
 // import {validate} from "../middlewares/validate.js";
 // import {

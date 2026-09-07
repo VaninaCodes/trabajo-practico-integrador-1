@@ -28,8 +28,8 @@ export const addTagToArticle = async (req,res) => {
 
 export const removeTagFromArticle = async (req,res) => {
     try {
-        const {id} = req.params;
-        const articleTag = await articleTagModel.findByPk(id);
+        const {articleTagId} = req.params;
+        const articleTag = await articleTagModel.findByPk(articleTagId);
         if (!articleTag) return res.status(404).json({message: 'Relacion article-tag no encontrada'});
         
         await articleTag.destroy();
