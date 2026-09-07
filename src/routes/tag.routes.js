@@ -15,8 +15,8 @@ import {
 
 export const tagRouter = Router();
 
-tagRouter.post("/api/tags", createTag);
-tagRouter.get("/api/tags", getAllTags);
-tagRouter.get("/api/tags/:id", getTagById);
-tagRouter.put("/api/tags/:id", updateTag);
-tagRouter.delete("/api/tags/:id", deleteTag);
+tagRouter.post("/tags", createTag);
+tagRouter.get("/tags", getAllTags);
+tagRouter.get("/tags/:id", getTagById);
+tagRouter.put("/tags/:id", updateTag);
+tagRouter.delete("/tags/:id", deleteTag);

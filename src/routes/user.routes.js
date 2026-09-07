@@ -15,8 +15,8 @@ import {
 
 export const userRouter = Router();
 
-userRouter.post("/api/users", createUser);
-userRouter.get("/api/users", getAllUsers);
-userRouter.get("/api/users/:id", getUserById);
-userRouter.put("/api/users/:id", updateUser);
-userRouter.delete("/api/users/:id", deleteUser);
+userRouter.post("/users", createUser);
+userRouter.get("/users", getAllUsers);
+userRouter.get("/users/:id", getUserById);
+userRouter.put("/users/:id", updateUser);
+userRouter.delete("/users/:id", deleteUser);

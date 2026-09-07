@@ -15,8 +15,8 @@ import {
 
 export const articleRouter = Router();
 
-articleRouter.post("/api/articles", createArticle);
-articleRouter.get("/api/articles", getAllArticles);
-articleRouter.get("/api/articles/:id", getArticleById);
-articleRouter.put("/api/articles/:id", updateArticle);
-articleRouter.delete("/api/articles/:id", deleteArticle);
+articleRouter.post("/articles", createArticle);
+articleRouter.get("/articles", getAllArticles);
+articleRouter.get("/articles/:id", getArticleById);
+articleRouter.put("/articles/:id", updateArticle);
+articleRouter.delete("/articles/:id", deleteArticle);

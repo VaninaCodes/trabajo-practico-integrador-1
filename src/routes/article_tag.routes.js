@@ -12,5 +12,5 @@ import {
 
 export const articleTagRouter = Router();
 
-articleTagRouter.post("/api/articles-tags", addTagToArticle);
-articleTagRouter.delete("/api/articles-tags/:articleTagId", removeTagFromArticle);
+articleTagRouter.post("/articles-tags", addTagToArticle);
+articleTagRouter.delete("/articles-tags/:articleTagId", removeTagFromArticle);
