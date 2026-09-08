@@ -57,7 +57,7 @@ export const updateUserValidation = [
     body("username")
         .optional()
         .isLength({min: 3, max:20}).withMessage("Los caracteres del nombre de usuario deben ser 3 minimo y 20 maximo")
-        .isAlphanumeric().withMessage("El nombre de usuario solo puede contener letras y letras")
+        .isAlphanumeric().withMessage("El nombre de usuario solo puede contener numeros y letras")
         .custom(async(username, {req})=>{
             const existe = await userModel.findOne({where: {username}});
             if(existe && existe.id !== Number(req.params.id)) {
