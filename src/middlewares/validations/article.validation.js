@@ -25,7 +25,7 @@ export const createArticleValidation = [
         .isLength({min: 50}).withMessage("El contenido debe tener al menos 50 caracteres"),
     body("excerpt")
         .optional()
-        .isLength({max: 500})("El resumen no puede superar los 500 caracteres"),
+        .isLength({max: 500}).withMessage("El resumen no puede superar los 500 caracteres"),
     body("status")
         .optional()
         .isIn(estadosPermitidos).withMessage(`El estado solo puede ser: ${estadosPermitidos}`)
@@ -56,7 +56,7 @@ export const updateArticleValidation = [
         .isLength({min: 50}).withMessage("El contenido debe tener al menos 50 caracteres"),
     body("excerpt")
         .optional()
-        .isLength({max: 500})("El resumen no puede superar los 500 caracteres"),
+        .isLength({max: 500}).withMessage("El resumen no puede superar los 500 caracteres"),
     body("status")
         .optional()
         .isIn(estadosPermitidos).withMessage(`El estado solo puede ser: ${estadosPermitidos}`)

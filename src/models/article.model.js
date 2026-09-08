@@ -4,7 +4,7 @@ import {userModel} from "./user.model.js";
 
 export const articleModel = sequelize.define("Article", {
     title: {
-        type: DataTypes.VARCHAR(100),
+        type: DataTypes.STRING(100),
         allowNull: false,
         validate: {len: [3, 200]}
     },
@@ -13,7 +13,7 @@ export const articleModel = sequelize.define("Article", {
         allowNull: false,
         validate: {len: [50, 100000]}
     },
-    excerpt: {type: DataTypes.VARCHAR(500)},
+    excerpt: {type: DataTypes.STRING(500)},
     status: {
         type: DataTypes.ENUM('published', 'archived'),
         defaultValue: 'published',

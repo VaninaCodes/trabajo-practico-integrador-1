@@ -4,19 +4,19 @@ import {profileModel} from "./profile.model.js";
 
 export const userModel = sequelize.define("User", {
     username: {
-        type: DataTypes.VARCHAR(20),
+        type: DataTypes.STRING(20),
         allowNull: false,
         unique: true,
         validate: {len: [3, 20]}
     },
     email: {
-        type: DataTypes.VARCHAR(100),
+        type: DataTypes.STRING(100),
         allowNull: false,
         unique: true,
         validate: {isEmail: true}
     },
     password: {
-        type: DataTypes.VARCHAR(255),
+        type: DataTypes.STRING(255),
         allowNull: false
     },
     role: {

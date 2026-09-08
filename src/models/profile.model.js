@@ -7,9 +7,9 @@ export const profileModel = sequelize.define("Profile", {
         allowNull: false,
         unique: true,
     },
-    first_name: { type: DataTypes.VARCHAR(50)},
-    last_name: { type: DataTypes.VARCHAR(50)},
+    first_name: { type: DataTypes.STRING(50)},
+    last_name: { type: DataTypes.STRING(50)},
     biography: { type: DataTypes.TEXT},
-    avatar_url: { type: DataTypes.VARCHAR(255)},
+    avatar_url: { type: DataTypes.STRING(255)},
     birth_date: { type: DataTypes.DATEONLY},
 });

@@ -12,7 +12,7 @@ import {
   articleIdValidation,
   createArticleValidation,
   updateArticleValidation,
-} from "../middlewares/validations/article_tag.validation.js";
+} from "../middlewares/validations/article.validation.js";
 
 export const articleRouter = Router();
 

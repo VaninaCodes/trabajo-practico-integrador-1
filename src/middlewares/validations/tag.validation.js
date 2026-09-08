@@ -14,7 +14,7 @@ export const tagIdValidation = [
 export const createTagValidation = [
     body("name")
         .notEmpty().withMessage("El nombre del tag no debe ser vacio")
-        .idLength({min: 2, max: 30}).withMessage("Los caracteres del tag deben ser 2 minimo y 30 maximo")
+        .isLength({min: 2, max: 30}).withMessage("Los caracteres del tag deben ser 2 minimo y 30 maximo")
         .custom((name)=>{
             if(/\s/.test(name)){
                 throw new Error("El nombre del tag no debe contener espacios");

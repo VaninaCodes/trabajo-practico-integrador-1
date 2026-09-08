@@ -1,4 +1,4 @@
-import {tagModel} from "../models/user.model.js";
+import {tagModel} from "../models/tag.model.js";
 import {articleModel} from "../models/article.model.js";
 import {articleTagModel} from "../models/article_tag.model.js";
 
