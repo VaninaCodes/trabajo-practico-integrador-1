@@ -18,8 +18,8 @@ export const createTagValidation = [
         .custom((name)=>{
             if(/\s/.test(name)){
                 throw new Error("El nombre del tag no debe contener espacios");
-                return true;
             }
+            return true;
         })
         .custom(async(name)=>{
             const existe = await tagModel.findOne({where: {name}});

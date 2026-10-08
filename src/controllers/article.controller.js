@@ -62,7 +62,7 @@ export const deleteArticle = async (req, res) => {
     try{
         const {id} = req.params;
 
-        const articleExist = await tagModel.findByPk(id);
+        const articleExist = await articleModel.findByPk(id);
         if (!articleExist){
             return res.status(404).json({message: 'Articulo no encontrado'});
         }
