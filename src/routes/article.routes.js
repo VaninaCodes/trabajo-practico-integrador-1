@@ -6,7 +6,7 @@ import {
     getArticleById,
     updateArticle,
 } from "../controllers/article.controller.js";
-
+import { authMiddleware } from "../middlewares/auth.middleware.js";
 import {validate} from "../middlewares/validate.js";
 import {
   articleIdValidation,
@@ -16,8 +16,8 @@ import {
 
 export const articleRouter = Router();
 
-articleRouter.post("/articles", createArticleValidation, validate, createArticle);
+articleRouter.post("/articles", authMiddleware, createArticleValidation, validate, createArticle);
 articleRouter.get("/articles", getAllArticles);
-articleRouter.get("/articles/:id",articleIdValidation, validate, getArticleById);
-articleRouter.put("/articles/:id", articleIdValidation, updateArticleValidation, validate, updateArticle);
-articleRouter.delete("/articles/:id", articleIdValidation, validate, deleteArticle);
+articleRouter.get("/articles/:id", authMiddleware, articleIdValidation, validate, getArticleById);
+articleRouter.put("/articles/:id", authMiddleware, articleIdValidation, updateArticleValidation, validate, updateArticle);
+articleRouter.delete("/articles/:id", authMiddleware, articleIdValidation, validate, deleteArticle);

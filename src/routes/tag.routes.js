@@ -6,7 +6,8 @@ import {
     getTagById,
     updateTag,
 } from "../controllers/tag.controller.js";
-
+import { authMiddleware } from "../middlewares/auth.middleware.js";
+import { adminMiddleware } from "../middlewares/admin.middleware.js";
 import {validate} from "../middlewares/validate.js";
 import {
   tagIdValidation,
@@ -16,8 +17,8 @@ import {
 
 export const tagRouter = Router();
 
-tagRouter.post("/tags", createTagValidation, validate, createTag);
+tagRouter.post("/tags", authMiddleware, adminMiddleware, createTagValidation, validate, createTag);
 tagRouter.get("/tags", getAllTags);
-tagRouter.get("/tags/:id", tagIdValidation, validate, getTagById);
-tagRouter.put("/tags/:id", tagIdValidation, updateTagValidation, validate, updateTag);
-tagRouter.delete("/tags/:id", tagIdValidation, validate, deleteTag);
+tagRouter.get("/tags/:id", authMiddleware, adminMiddleware, tagIdValidation, validate, getTagById);
+tagRouter.put("/tags/:id", authMiddleware, adminMiddleware, tagIdValidation, updateTagValidation, validate, updateTag);
+tagRouter.delete("/tags/:id", authMiddleware, adminMiddleware, tagIdValidation, validate, deleteTag);
